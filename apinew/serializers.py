@@ -5,6 +5,8 @@ from rest_framework  import serializers
 
 class MovieSerializer(serializers.ModelSerializer):
 
+    len_name = serializers.SerializerMethodField()
+
     class Meta:
 
         model = Movie
@@ -15,6 +17,12 @@ class MovieSerializer(serializers.ModelSerializer):
       # if we want to not show a particular field then we can use Exclude method.
       #  rather then specify all the fields which we want to use.
         # exclude =['active']
+    
+    #define custom field name:
+    def get_len_name(self,object):
+
+        length = len(object.name)
+        return length
 
     def validate(self,data):
         if data['name'] == data['description']:
