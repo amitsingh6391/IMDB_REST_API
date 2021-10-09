@@ -1,7 +1,7 @@
-from django.contrib import admin
+# from django.contrib import admin
 
-from apinew.models import Movie
+# from apinew.models import Movie
 
-# Register your models here.
+# # Register your models here.
 
-admin.site.register(Movie)
+# admin.site.register(Movie)
