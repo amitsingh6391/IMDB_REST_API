@@ -1,0 +1,26 @@
+//To create a new Django project we need this command:
+ //***  django-admin startproject watchmate ***//
+
+ 
+    //*** Create a new Virtual environment  ***//
+
+        python3 -m venv <myenvname>
+// And for activate this environment we have to navigate to our project:
+
+<myenvname>\Scripts\activate
+
+
+/.Django project is divided into multiple App
+
+  //.***********  CREATE A NEW APP ********//
+
+  Python manage.py startapp <Appname>
+
+
+///*** TO MIGRATE OUR PROJECT WE NEED THIS COMMANDS ********//
+
+           python manage.py migrate
+
+
+///*** To create a new super admin for database access ********//
+                python manage.py createsuperuser
