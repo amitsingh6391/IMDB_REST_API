@@ -7,7 +7,6 @@ from rest_framework import status
 
 # // ********** CLASS BASED VIEW *******//
 
-
 class StreamPlatformAV(APIView):
 
     def get(self,request):
@@ -58,9 +57,6 @@ class StreamPlatformDetailAV(APIView):
         streamPlatform.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-
-
 class WatchListAV(APIView):
 
     def get(self, request):
@@ -71,7 +67,6 @@ class WatchListAV(APIView):
         return Response(serializer.data)
     
     def post(self, request):
-
         serializer = WatchListSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
