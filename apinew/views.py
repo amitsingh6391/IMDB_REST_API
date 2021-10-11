@@ -65,32 +65,41 @@ class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
 
 # ViewSets 'While" using Router ;
 
-class StreamPlatformVs(viewsets.ViewSet):
-   def list(self, request):
-        queryset = StreamPlatform.objects.all()
-        serializer = StreamPlatformSerializer(queryset, many=True)
-        return Response(serializer.data)
 
-   def retrieve(self, request, pk=None):
-        queryset = StreamPlatform.objects.all()
-        watchlist = get_object_or_404(queryset, pk=pk)
-        serializer = StreamPlatformSerializer(watchlist)
-        return Response(serializer.data)
+class StreamPlatformVs(viewsets.ModelViewSet):
+    queryset = StreamPlatform.objects.all()
+    serializer_class = StreamPlatformSerializer
     
-   def create(self, request):
-        serializer = StreamPlatformSerializer(data = request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-           
-            return Response(serializer.data)
-        else:
-           
-            return Response(serializer.errors)
+
+
+       #  ''''' ViewSets .ViewSets ************8///
+
+# class StreamPlatformVs(viewsets.ViewSet):
+#    def list(self, request):
+#         queryset = StreamPlatform.objects.all()
+#         serializer = StreamPlatformSerializer(queryset, many=True)
+#         return Response(serializer.data)
+
+#    def retrieve(self, request, pk=None):
+#         queryset = StreamPlatform.objects.all()
+#         watchlist = get_object_or_404(queryset, pk=pk)
+#         serializer = StreamPlatformSerializer(watchlist)
+#         return Response(serializer.data)
     
-   def destroy(self, request,pk):
-        streamPlatform = StreamPlatform.objects.get(pk=pk)
-        streamPlatform.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+#    def create(self, request):
+#         serializer = StreamPlatformSerializer(data = request.data)
+#         if serializer.is_valid(raise_exception=True):
+#             serializer.save()
+           
+#             return Response(serializer.data)
+#         else:
+           
+#             return Response(serializer.errors)
+    
+#    def destroy(self, request,pk):
+#         streamPlatform = StreamPlatform.objects.get(pk=pk)
+#         streamPlatform.delete()
+#         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 
