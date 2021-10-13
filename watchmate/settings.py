@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'watchlist_app',
     'apinew',
     'rest_framework',
+    'rest_framework.authtoken',
     
 ]
 
@@ -127,3 +128,27 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# The default permissions policy will be set globally.
+
+# REST_FRAMEWORK = {
+
+# }
+
+# // Basic Authentication :
+REST_FRAMEWORK = {
+
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ]
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.BasicAuthentication',
+
+    # ]
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
