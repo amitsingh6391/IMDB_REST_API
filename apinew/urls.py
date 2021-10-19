@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 # from apinew.views import movie_list,movie_detail
 
 from apinew.views import (StreamPlatformVs, WatchListAV,WatchDetailAV,
-StreamPlatformAV,StreamPlatformDetailAV,ReviewList,ReviewDetail,ReviewCreate
+StreamPlatformAV,StreamPlatformDetailAV,ReviewList,ReviewDetail,ReviewCreate,ReviewUser
 )
 
 
@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('<int:pk>/reviews', ReviewList.as_view(),name='review-list'),
     path('<int:pk>/review-create', ReviewCreate.as_view(),name='review-create'),
-    path('review/<int:pk>', ReviewDetail.as_view(),name='review-detail')
-
+    path('review/<int:pk>/', ReviewDetail.as_view(),name='review-detail'),
+    # path('reviews/<str:username>/', ReviewUser.as_view(),name='user-review-detail')
+    path('reviews/', ReviewUser.as_view(),name='user-review-detail')
 ]

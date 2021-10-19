@@ -1,0 +1,31 @@
+
+
+//
+To login through the comand promt 
+//
+
+ We have to use command :  psql -U postgres -h localhost
+
+#To check the database we have to use command : /list 
+
+///***
+
+For creating new database we have to use commannd:=> create database <"mydatabasename">
+
+
+***///
+
+///*** To create a new user with encrypted password ***
+///
+
+CREATE USER <USERNAME> WITH ENCRYPTED PASSWORD <YOURPASSWORD>
+// CREATE USER django_birla WITH ENCRYPTED PASSWORD Singh@6391
+
+// To check the list of users 👍
+
+=====> \du
+
+
+  For GRANTING PERMSSION TO USER OF DATABASE WE HAVE TO USE COMMAND LIKE THIS:
+
+    ==> GRANT ALL PRIVILEGES ON DATABASE birla-care TO django-bira
